@@ -1,0 +1,30 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ImportTripQuotePlugin.Properties" GeneratedClassName="Production">
+  <Profiles />
+  <Settings>
+    <Setting Name="URL" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://localhost:3000/quote</Value>
+    </Setting>
+    <Setting Name="IncludeRule" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="IncludedRuleCategory" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">4,6,7,14,15,16,31</Value>
+    </Setting>
+    <Setting Name="QuoteFormat" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">HTML</Value>
+    </Setting>
+    <Setting Name="PasteHTMLElement" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">#tripquote_paste</Value>
+    </Setting>
+    <Setting Name="TestMode" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="UseTQC" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="CopyToClipboardOnly" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
