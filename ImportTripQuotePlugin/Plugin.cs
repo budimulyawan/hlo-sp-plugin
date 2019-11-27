@@ -64,6 +64,7 @@ namespace ImportTripQuotePlugin
         /// <param name="e">The <see cref="Travelport.Smartpoint.Helpers.Core.CoreHelperEventArgs"/> instance containing the event data.</param>
         private void OnSmartpointReady(object sender, CoreHelperEventArgs e)
         {
+            //UIHelper.Instance.ShowMessageBox("Start Hello");
             // Hook into any terminal commands we are interested in
             // Commands entered by the user before they are executed
             CoreHelper.Instance.TerminalCommunication.OnTerminalPreSend += this.OnTerminalPreSend;
@@ -159,57 +160,129 @@ namespace ImportTripQuotePlugin
             var dataObject = Travelport.Smartpoint.Plugins.Wishlist.Helpers.CopyToClipboard.CopyClipBoard(quoteFormat, out errorMessage, true);
             var quote = dataObject.GetText(textDataFormat);
             LoadPortal(quote);
+            string s = string.Empty;
         }
 
         private string GetDTOFromTQ()
         {
-            return DtoHelper.ConvertQuotesToJson("test", "123", "test footer", "aircomment","hotelcomment",
-                "carcomment", "railComment", "railcardcomment", "railCardreceiptComment","en");
+            return DtoHelper.ConvertQuotesToJson("test", "123", "test footer", "aircomment", "hotelcomment",
+                "carcomment", "railComment", "railcardcomment", "railCardreceiptComment", "en");
         }
 
         private void LoadPortal(String htmlQuote)
         {
+            string Locator = string.Empty;
             var pcc = Common.Helper.GetDesktopFactory().GetCurrentPcc();
             var sessionAreaInformation = Helper.GetDesktopFactory().GetSessionInformation().ActiveArea;
+            var bookingfile = Helper.GetDesktopFactory().RetrieveCurrentBookingFile();
             var agentId = sessionAreaInformation.SignOnIdentifier;
-            var url = GetConfigValue("URL");
-            var testMode = Boolean.Parse(GetConfigValue("TestMode"));
 
-            url += testMode ? String.Empty : "?" + String.Format("sign_on_identifier={0}&pcc={1}", agentId, pcc);
-           
-            var window = CreateWebBrowserWindow(new Uri(url), "locomote", "Locomote");
-            window.Show();
-            System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
-            FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
-            string version = fvi.FileVersion;
-            window.Title = String.Format("HelloWorld Import Trip Quote v{0}", version);
-            var wb = window.Content as SmartBrowserControl;
-            //var filteredQuote = FilterOutRules(quote);
-
-          
-            wb.WebBrowserControl.FrameLoadEnd += (sender, eventArgs) =>
+            if (!string.IsNullOrEmpty(bookingfile.RecordLocator))
             {
-                var htmlElement = GetConfigValue("PasteHTMLElement");
-                var jsonQuote = GetDTOFromTQ();
-                var js = String.Format("document.querySelector('{0}').value = JSON.stringify({1})", htmlElement, jsonQuote);
+                Locator = bookingfile.RecordLocator.ToString().Trim();
+                var url = GetConfigValue("URL");
+                var baseUrl = url;
+                var testMode = Boolean.Parse(GetConfigValue("TestMode"));
 
-                var host = eventArgs.Browser.GetHost();
-                if (host != null && testMode)
-                {
-                    host.ShowDevTools();
-                }
+                url += testMode ? String.Empty : "?" + String.Format("sign_on_identifier={0}&pcc={1}", agentId, pcc);
 
-                //Wait for the MainFrame to finish loading
-                if (eventArgs.Frame.IsMain)
+
+                var window = CreateWebBrowserWindow(new Uri(url), "locomote", "Locomote");
+                window.Show();
+                System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
+                FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
+                string version = fvi.FileVersion;
+                window.Title = String.Format("HelloWorld Import Trip Quote v{0}", version);
+                var wb = window.Content as SmartBrowserControl;
+                //var filteredQuote = FilterOutRules(quote);
+
+
+
+                wb.WebBrowserControl.FrameLoadEnd += (sender, eventArgs) =>
                 {
-                    eventArgs.Frame.ExecuteJavaScriptAsync(String.Format("console.log('{0}')", js));
-                    eventArgs.Frame.ExecuteJavaScriptAsync(js);
+                    var htmlElement = GetConfigValue("PasteHTMLElement");
+                    var jsonQuote = GetDTOFromTQ();
+
+                    //var js = String.Format("document.querySelector('{0}').value = JSON.stringify({1})", htmlElement, jsonQuote);
+                    var jsAgentNo = String.Format("document.getElementById('AgentNo').value = '" + GetConfigValue("AgentNo").ToString() + "'");
+                    var jsUserId = String.Format("document.getElementById('UserId').value = '" + GetConfigValue("UserId").ToString() + "'");
+                    var jsPassword = String.Format("document.getElementById('Password').value = '" + GetConfigValue("Password").ToString() + "'");
+                    var jsClick = String.Format("document.getElementById('LoginBtn').click()");
+                    var host = eventArgs.Browser.GetHost();
+                    if (host != null && testMode)
+                    {
+                        host.ShowDevTools();
+                    }
+
+                    //Wait for the MainFrame to finish loading
+                    if (eventArgs.Frame.IsMain)
+                    {
+                        eventArgs.Frame.ExecuteJavaScriptAsync(jsAgentNo);
+                        eventArgs.Frame.ExecuteJavaScriptAsync(jsUserId);
+                        eventArgs.Frame.ExecuteJavaScriptAsync(jsPassword);
+                        eventArgs.Frame.ExecuteJavaScriptAsync(jsClick);
+                    }
+                };
+
+                if (wb.WebBrowserControl.IsLoaded)
+                {
+
+                    var PNRURL = GetConfigValue("PNRURL");
+                    var testModePNR = Boolean.Parse(GetConfigValue("TestMode"));
+
+                    //PNRURL += testModePNR ? String.Empty : "?" + String.Format("sign_on_identifier={0}&pcc={1}", agentId, pcc);
+
+                    var PNRwindow = CreateWebBrowserWindow(new Uri(PNRURL), "locomote", "Locomote");
+                    PNRwindow.Show();
+                    System.Reflection.Assembly PNRassembly = System.Reflection.Assembly.GetExecutingAssembly();
+                    FileVersionInfo PNRfvi = FileVersionInfo.GetVersionInfo(assembly.Location);
+                    string PNRversion = fvi.FileVersion;
+                    PNRwindow.Title = String.Format("HelloWorld Import Trip Quote v{0}", PNRversion);
+                    var PNRwb = PNRwindow.Content as SmartBrowserControl;
+                    //var filteredQuote = FilterOutRules(quote);
+
+
+                    PNRwb.WebBrowserControl.FrameLoadEnd += (sender, eventArgs) =>
+                    {
+                        var htmlElement = GetConfigValue("PasteHTMLElement");
+                        var jsonQuote = GetDTOFromTQ();
+                        // you need to put js element .value for usrename password and
+                        // .click() down here....
+
+                        var jsAgentNo = String.Format("document.getElementById('AgentNo').value = '" + GetConfigValue("AgentNo").ToString() + "'");
+
+                        var js = String.Format("document.querySelector('{0}').value = JSON.stringify({1})", htmlElement, jsonQuote);
+                        var jsPCC = String.Format("document.getElementById('Pcc').value = '" + pcc + "'");
+                        var jsTransactionType = String.Format("document.getElementById('TransactionType').value = 'Ticketing'");
+                        var jsIsScheduleChange = String.Format("document.getElementById('IsScheduleChange').value = false'");
+                        var jsTicketing = String.Format("document.getElementById('selectTicketing').checked = true");
+                        var jsPnr = String.Format("document.getElementById('Locator').value = '" + Locator + "'");
+                        //var jsSubmitClick = String.Format("document.getElementById('submit').click()");
+
+                        var jsSubmitClick = String.Format("$('button[type=\"submit\"]').click()");
+                        var host = eventArgs.Browser.GetHost();
+                        if (host != null && testMode)
+                        {
+                            host.ShowDevTools();
+                        }
+
+                        //Wait for the MainFrame to finish loading
+                        if (eventArgs.Frame.IsMain)
+                        {
+                            //eventArgs.Frame.ExecuteJavaScriptAsync(String.Format("console.log('{0}')", js));
+                            eventArgs.Frame.ExecuteJavaScriptAsync(jsPCC);
+                            eventArgs.Frame.ExecuteJavaScriptAsync(jsTransactionType);
+                            eventArgs.Frame.ExecuteJavaScriptAsync(jsIsScheduleChange);
+                            eventArgs.Frame.ExecuteJavaScriptAsync(jsTicketing);
+                            eventArgs.Frame.ExecuteJavaScriptAsync(jsPnr);
+                            if (GetConfigValue("PNRURL") == eventArgs.Frame.Url.ToString().Trim()) // need to delete content after ?
+                            {
+                                eventArgs.Frame.ExecuteJavaScriptAsync(jsSubmitClick);
+                            }
+                        }
+                    };
                 }
-            };
-            wb.WebBrowserControl.ConsoleMessage += (sender, eventArgs) =>
-            {
-                //UIHelper.Instance.ShowMessageBox(String.Format("[Line: {0}] {1}", eventArgs.LineNumber, eventArgs.Message));
-            };
+            }
         }
 
         /// <summary>
@@ -230,6 +303,9 @@ namespace ImportTripQuotePlugin
             browserWindow.WindowStyle = new WindowStyle();
             browserWindow.Title = title;
             browserWindow.NoClose = false;
+            browserWindow.Width = 1350;
+            browserWindow.Height = 750;
+            browserWindow.WindowStartupLocation = WindowStartupLocation.CenterOwner;
             browserWindow.Owner = UIHelper.Instance.GetOwnerWindow(UIHelper.Instance.CurrentTEControl.SmartTerminalWindow);
 
             var wb = browserWindow.Content as SmartBrowserControl;
