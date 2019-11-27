@@ -12,7 +12,7 @@ namespace ImportTripQuotePlugin.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.3.0.0")]
     internal sealed partial class Production : global::System.Configuration.ApplicationSettingsBase {
         
         private static Production defaultInstance = ((Production)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Production())));
@@ -20,15 +20,6 @@ namespace ImportTripQuotePlugin.Properties {
         public static Production Default {
             get {
                 return defaultInstance;
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:3000/quote")]
-        public string URL {
-            get {
-                return ((string)(this["URL"]));
             }
         }
         
@@ -80,18 +71,63 @@ namespace ImportTripQuotePlugin.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool UseTQC {
+        public bool CopyToClipboardOnly {
             get {
-                return ((bool)(this["UseTQC"]));
+                return ((bool)(this["CopyToClipboardOnly"]));
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool CopyToClipboardOnly {
+        [global::System.Configuration.DefaultSettingValueAttribute("https://www.airtickets.com.au/")]
+        public string URL {
             get {
-                return ((bool)(this["CopyToClipboardOnly"]));
+                return ((string)(this["URL"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("100003")]
+        public string AgentNo {
+            get {
+                return ((string)(this["AgentNo"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("CHANGE_TO_YOUR_USERNAME")]
+        public string UserId {
+            get {
+                return ((string)(this["UserId"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("CHANGE_TO_YOUR_PASSWORD")]
+        public string Password {
+            get {
+                return ((string)(this["Password"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://www.airtickets.com.au/SmartTickets/Pnr")]
+        public string PNRURL {
+            get {
+                return ((string)(this["PNRURL"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool UseTQC {
+            get {
+                return ((bool)(this["UseTQC"]));
             }
         }
     }
