@@ -2,9 +2,6 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ImportTripQuotePlugin.Properties" GeneratedClassName="Production">
   <Profiles />
   <Settings>
-    <Setting Name="URL" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">http://localhost:3000/quote</Value>
-    </Setting>
     <Setting Name="IncludeRule" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">True</Value>
     </Setting>
@@ -20,11 +17,26 @@
     <Setting Name="TestMode" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="UseTQC" Type="System.Boolean" Scope="Application">
-      <Value Profile="(Default)">True</Value>
-    </Setting>
     <Setting Name="CopyToClipboardOnly" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="URL" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://www.airtickets.com.au/</Value>
+    </Setting>
+    <Setting Name="AgentNo" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">100003</Value>
+    </Setting>
+    <Setting Name="UserId" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">CHANGE_TO_YOUR_USERNAME</Value>
+    </Setting>
+    <Setting Name="Password" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">CHANGE_TO_YOUR_PASSWORD</Value>
+    </Setting>
+    <Setting Name="PNRURL" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://www.airtickets.com.au/SmartTickets/Pnr</Value>
+    </Setting>
+    <Setting Name="UseTQC" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
 </SettingsFile>
