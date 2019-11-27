@@ -51,38 +51,30 @@
   <ItemGroup>
     <Reference Include="0170.00.FocalpointShopping, Version=7.2.5.57, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Program Files (x86)\Travelport\Smartpoint\0170.00.FocalpointShopping.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Travelport\Smartpoint\0170.00.FocalpointShopping.dll</HintPath>
     </Reference>
     <Reference Include="0174.00.QuickQuotesPlus, Version=17.4.2.99, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Program Files (x86)\Travelport\Smartpoint\0174.00.QuickQuotesPlus.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Travelport\Smartpoint\0174.00.QuickQuotesPlus.dll</HintPath>
     </Reference>
     <Reference Include="Autofac">
-      <HintPath>..\..\..\Program Files (x86)\Travelport\SmartpointPro\Autofac.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Travelport\Smartpoint\Autofac.dll</HintPath>
     </Reference>
     <Reference Include="AutoMapper">
-      <HintPath>..\..\..\Program Files (x86)\Travelport\SmartpointPro\AutoMapper.dll</HintPath>
-    </Reference>
-    <Reference Include="Awesomium.Core, Version=1.7.5.0, Culture=neutral, PublicKeyToken=e1a0d7c8071a5214, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Program Files (x86)\SmartpointBuildManager\BuildBase\SmartpointV3_Production_7_1_20_303\Awesomium.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Awesomium.Windows.Controls, Version=1.7.5.0, Culture=neutral, PublicKeyToken=7a34e179b8b61c39, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Program Files (x86)\SmartpointBuildManager\BuildBase\SmartpointV3_Production_7_1_20_303\Awesomium.Windows.Controls.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Travelport\Smartpoint\AutoMapper.dll</HintPath>
     </Reference>
     <Reference Include="CefSharp">
-      <HintPath>..\..\..\Program Files (x86)\Travelport\Smartpoint\CefSharp.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Travelport\Smartpoint\CefSharp.dll</HintPath>
     </Reference>
     <Reference Include="CefSharp.Core">
-      <HintPath>..\..\..\Program Files (x86)\Travelport\Smartpoint\CefSharp.Core.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Travelport\Smartpoint\CefSharp.Core.dll</HintPath>
     </Reference>
     <Reference Include="CefSharp.Wpf">
-      <HintPath>..\..\..\Program Files (x86)\Travelport\Smartpoint\CefSharp.Wpf.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Travelport\Smartpoint\CefSharp.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="PresentationFramework.Classic" />
     <Reference Include="SmartpointPro.Environment">
-      <HintPath>..\..\..\Program Files (x86)\Travelport\SmartpointPro\SmartpointPro.Environment.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Travelport\Smartpoint\SmartpointPro.Environment.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -104,23 +96,23 @@
     </Reference>
     <Reference Include="Travelport.MvvmHelper, Version=7.1.20.303, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Program Files (x86)\Travelport\Smartpoint\Travelport.MvvmHelper.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Travelport\Smartpoint\Travelport.MvvmHelper.dll</HintPath>
     </Reference>
     <Reference Include="Travelport.Smartpoint, Version=7.1.20.303, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Program Files (x86)\Travelport\Smartpoint\Travelport.Smartpoint.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Travelport\Smartpoint\Travelport.Smartpoint.dll</HintPath>
     </Reference>
     <Reference Include="Travelport.Smartpoint.CommonLibrary, Version=7.3.20.44, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Program Files (x86)\Travelport\Smartpoint\Travelport.Smartpoint.CommonLibrary.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Travelport\Smartpoint\Travelport.Smartpoint.CommonLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Travelport.Smartpoint.Controls, Version=7.3.20.44, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Program Files (x86)\Travelport\Smartpoint\Travelport.Smartpoint.Controls.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Travelport\Smartpoint\Travelport.Smartpoint.Controls.dll</HintPath>
     </Reference>
     <Reference Include="Travelport.TravelData, Version=7.1.20.303, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Program Files (x86)\Travelport\Smartpoint\Travelport.TravelData.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Travelport\Smartpoint\Travelport.TravelData.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />

@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2005
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HLOImportTripQuotePlugin", "HLOImportTripQuotePlugin.csproj", "{860127D0-1B58-49A1-ABDF-72D7E859569D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HLOImportTripQuoteInstallerLib", "..\HLOImportTripQuoteInstallerLib\HLOImportTripQuoteInstallerLib.csproj", "{81190928-7026-4675-8949-0856AE1708FA}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "HLOImportTripQuoteSetup", "HLOImportTripQuoteSetup\HLOImportTripQuoteSetup.vdproj", "{0DDAF5C4-DF55-44C6-BF1A-7EAA0723283F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{860127D0-1B58-49A1-ABDF-72D7E859569D}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{860127D0-1B58-49A1-ABDF-72D7E859569D}.Debug|x86.ActiveCfg = Debug|x86
+		{860127D0-1B58-49A1-ABDF-72D7E859569D}.Debug|x86.Build.0 = Debug|x86
+		{860127D0-1B58-49A1-ABDF-72D7E859569D}.Release|Any CPU.ActiveCfg = Release|x86
+		{860127D0-1B58-49A1-ABDF-72D7E859569D}.Release|x86.ActiveCfg = Release|x86
+		{860127D0-1B58-49A1-ABDF-72D7E859569D}.Release|x86.Build.0 = Release|x86
+		{81190928-7026-4675-8949-0856AE1708FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81190928-7026-4675-8949-0856AE1708FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81190928-7026-4675-8949-0856AE1708FA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{81190928-7026-4675-8949-0856AE1708FA}.Debug|x86.Build.0 = Debug|Any CPU
+		{81190928-7026-4675-8949-0856AE1708FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81190928-7026-4675-8949-0856AE1708FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81190928-7026-4675-8949-0856AE1708FA}.Release|x86.ActiveCfg = Release|Any CPU
+		{81190928-7026-4675-8949-0856AE1708FA}.Release|x86.Build.0 = Release|Any CPU
+		{0DDAF5C4-DF55-44C6-BF1A-7EAA0723283F}.Debug|Any CPU.ActiveCfg = Debug
+		{0DDAF5C4-DF55-44C6-BF1A-7EAA0723283F}.Debug|x86.ActiveCfg = Debug
+		{0DDAF5C4-DF55-44C6-BF1A-7EAA0723283F}.Release|Any CPU.ActiveCfg = Release
+		{0DDAF5C4-DF55-44C6-BF1A-7EAA0723283F}.Release|x86.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {59626868-2658-46C2-8F54-C3AD1C12E7AC}
+	EndGlobalSection
+EndGlobal
