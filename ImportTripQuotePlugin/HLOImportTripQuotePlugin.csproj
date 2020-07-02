@@ -122,7 +122,6 @@
     <Compile Include="CallbackObjectFromJs.cs" />
     <Compile Include="Common\Helper.cs" />
     <Compile Include="Plugin.cs" />
-    <Compile Include="Properties\Production.cs" />
     <Compile Include="Properties\Production.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
